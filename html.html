@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yadav Dairy Farm - Fresh Dairy Products Delivered to Your Doorstep</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            --secondary: #FF9800;
+            --accent: #FF5722;
+            --text-dark: #333333;
+            --text-light: #757575;
+            --background: #F9F9F9;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray: #E0E0E0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F57C00;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        #cartBtn {
+            display: flex;
+            align-items: center;
+            background-color: var(--primary-light);
+            padding: 8px 15px;
+            border-radius: 50px;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        #cartBtn i {
+            margin-right: 8px;
+        }
+
+        #cartCount {
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transform: rotate(3deg);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: rotate(0deg);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .features .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--radius);
+            background-color: var(--gray-light);
+            transition: var(--transition);
+            flex: 1;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            background-color: var(--primary-light);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--background);
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item h4 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item h4::after {
+            content: '\f078';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-item p {
+            margin-top: 15px;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background-color: var(--gray-light);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: var(--primary-light);
+            opacity: 0.7;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .review-card h4 {
+            color: var(--primary-dark);
+            text-align: right;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--background);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--background);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.3s;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .close:hover {
+            color: var(--accent);
+        }
+
+        /* Payment System Styles */
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            padding: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .payment-method:hover {
+            border-color: var(--primary);
+            background-color: var(--gray-light);
+        }
+        
+        .payment-method.selected {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+        
+        .payment-method-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .payment-method-details {
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .payment-method.selected .payment-method-details {
+            display: block;
+        }
+        
+        .payment-form {
+            margin-top: 15px;
+        }
+        
+        .payment-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        
+        .payment-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+        
+        .payment-form-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .payment-form-row .form-group {
+            flex: 1;
+        }
+        
+        .saved-cards {
+            margin-top: 15px;
+        }
+        
+        .saved-card {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid var(--gray);
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .saved-card:hover {
+            border-color: var(--primary);
+        }
+        
+        .saved-card.selected {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+        
+        .saved-card-icon {
+            margin-right: 10px;
+            font-size: 24px;
+            color: var(--text-light);
+        }
+        
+        .saved-card-info {
+            flex: 1;
+        }
+        
+        .add-new-card {
+            color: var(--primary);
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .checkout-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .checkout-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gray);
+            z-index: 1;
+        }
+        
+        .checkout-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .checkout-step.active .step-number {
+            background: var(--primary);
+        }
+        
+        .checkout-step.completed .step-number {
+            background: var(--primary);
+        }
+        
+        .step-title {
+            font-size: 12px;
+            text-align: center;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .checkout-step.active .step-title {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .checkout-section {
+            display: none;
+        }
+        
+        .checkout-section.active {
+            display: block;
+        }
+        
+        .checkout-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .order-summary {
+            background: var(--gray-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            padding-top: 10px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+        
+        .order-success {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .order-success i {
+            font-size: 60px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .order-success h2 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin-bottom: 40px;
+            }
+            
+            .features .container {
+                flex-direction: column;
+            }
+            
+            .feature-box {
+                margin-bottom: 30px;
+            }
+            
+            .about .container {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .checkout-steps {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .checkout-steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Yadav Dairy Farm</h1>
+                <p>100% Pure & Fresh Dairy Products</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="loginBtn">Login/Register</a></li>
+                    <li><a href="#" id="cartBtn"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Cow Image -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>100% Fresh Dairy Delivered to Your Doorstep</h2>
+                <p>Enjoy the purest milk and dairy products delivered fresh from our farm to your home within 1-2 hours</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://www.shutterstock.com/image-vector/3d-fresh-milk-ad-template-600nw-2120388287.jpg" alt="Fresh milk and dairy products">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-box">
+                <i class="fas fa-truck"></i>
+                <h3>Free Home Delivery</h3>
+                <p>No delivery charges, straight to your home every morning</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-check-circle"></i>
+                <h3>100% Pure</h3>
+                <p>Natural milk without any adulterants, straight from our farm</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-home"></i>
+                <h3>Farm Fresh</h3>
+                <p>Direct from our farm to your home at 6am to 8am morning daily</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Where do you source your milk from?</h4>
+                <p>All our milk is sourced directly from our farm and processed under strict hygiene standards.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you deliver every day?</h4>
+                <p>Yes, we deliver 7 days a week between 6:00 AM - 9:00 AM.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is your milk pasteurized?</h4>
+                <p>Yes, our milk is pasteurized and safe for direct consumption.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How can I pay for my orders?</h4>
+                <p>You can pay via UPI, cash on delivery, or online payment during checkout.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Happy Customers Say</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p>"The freshest milk I've ever had. Delivery is always on time! My family loves the taste and quality."</p>
+                    <h4>- Shubham yadav </h4>
+                </div>
+                <div class="review-card">
+                    <p>"Tastes just like farm milk we used to get in childhood. Love it! Now my kids can experience real milk flavor."</p>
+                    <h4>- Sani Yadav </h4>
+                </div>
+                <div class="review-card">
+                    <p>"The curd and paneer are excellent. Highly recommend Yadav Dairy. Best quality in town!"</p>
+                    <h4>- Ankit Gupta   </h4>
+                </div>
+                <div class="review-card">
+                    <p>"The milk from Yadav Dairy is so pure and fresh! It reminds me of the milk we had in our village. Thank you for keeping the real taste alive"</p>
+                    <h4>- Pritee M  </h4>
+                </div>
+                <div class="review-card">
+                    <p>"I've been a loyal customer for over 5 years. The consistent quality and timely delivery make Yadav Dairy my trusted choice for my family"</p>
+                    <h4>- Abhishek Y  </h4>
+                </div>
+                <div class="review-card">
+                    <p>"Finally, a dairy farm that delivers honesty in every bottle. You can truly taste the difference"</p>
+                    <h4>- The Ankush family   </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Dairy Products</h2>
+            <div class="product-grid">
+                <!-- Product items will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Yadav Dairy Farm</h2>
+                <p>We are a family-owned dairy farm committed to providing the freshest, purest dairy products to our customers. Our cows are raised with care and love, ensuring the highest quality milk.</p>
+                <p>All our products are processed in hygienic conditions and delivered fresh to your doorstep within 1-2 hours of ordering. We follow traditional methods with modern hygiene standards.</p>
+                <a href="#products" class="btn">Explore Our Products</a>
+            </div>
+            <div class="about-image">
+                <img src="https://www.gurukripajaipur.com/wp-content/uploads/2018/11/fresh-cow-milk.jpg" alt="Yadav Dairy Farm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Dairy Farm Road, Village, City</p>
+                    <p><i class="fas fa-phone"></i> +919332000036</p>
+                    <p><i class="fas fa-envelope"></i> info@yadavdairyfarm.com</p>
+                    <p><i class="fas fa-clock"></i> 6:00 AM - 8:00 PM (Every Day)</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Yadav Dairy Farm</h3>
+                    <p>Providing fresh, pure dairy products since 2010. Our commitment is to quality and customer satisfaction.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+    <h3>Connect With Us</h3>
+    <div class="social-icons">
+        <!-- Replace YOUR_PROFILE_URL with the actual link for each platform -->
+        <a href="https://www.facebook.com/YOUR_PROFILE_URL" target="_blank" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/website_creating_07/#" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/YOUR_PROFILE_URL" target="_blank" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://alvo.chat/6BcL" target="_blank" aria-label="Message us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2010 Yadav Dairy Farm. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login / Register</h2>
+            <form id="authForm">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </form>
+            
+            <form id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <input type="text" id="registerName" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="registerPhone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="registerAddress" placeholder="Delivery Address" required></textarea>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: <span id="cartTotal">₹0</span></h3>
+            </div>
+            <button class="btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div class="checkout-steps">
+                <div class="checkout-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Cart</div>
+                </div>
+                <div class="checkout-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Details</div>
+                </div>
+                <div class="checkout-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Payment</div>
+                </div>
+                <div class="checkout-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Complete</div>
+                </div>
+            </div>
+            
+            <div class="checkout-section active" data-section="1">
+                <h2>Review Your Order</h2>
+                <div class="order-summary">
+                    <div id="checkoutItems"></div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="checkoutTotal">₹0</span>
+                    </div>
+                </div>
+                <div class="checkout-nav">
+                    <button class="btn btn-secondary" id="closeCheckout">Back to Cart</button>
+                    <button class="btn" id="toDetails">Continue to Details</button>
+                </div>
+            </div>
+            
+            <div class="checkout-section" data-section="2">
+                <h2>Delivery Information</h2>
+                <form id="deliveryForm">
+                    <div class="form-group">
+                        <input type="text" id="deliveryName" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="deliveryPhone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="deliveryAddress" placeholder="Delivery Address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="deliveryInstructions" placeholder="Delivery Instructions (optional)">
+                    </div>
+                </form>
+                <div class="checkout-nav">
+                    <button class="btn btn-secondary" id="backToCart">Back</button>
+                    <button class="btn" id="toPayment">Continue to Payment</button>
+                </div>
+            </div>
+            
+            <div class="checkout-section" data-section="3">
+                <h2>Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method" data-method="card">
+                        <div class="payment-method-header">
+                            <div>
+                                <i class="fas fa-credit-card"></i>
+                                <span>Credit/Debit Card</span>
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="payment-method-details">
+                            <div class="saved-cards">
+                                <div class="saved-card" data-card="new">
+                                    <div class="saved-card-icon"><i class="fas fa-plus-circle"></i></div>
+                                    <div class="saved-card-info">Add new card</div>
+                                </div>
+                            </div>
+                            <div class="payment-form" id="cardForm">
+                                <input type="text" placeholder="Card Number" required>
+                                <div class="payment-form-row">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="CVV" required>
+                                    </div>
+                                </div>
+                                <input type="text" placeholder="Cardholder Name" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method" data-method="upi">
+                        <div class="payment-method-header">
+                            <div>
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>UPI</span>
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="payment-method-details">
+                            <div class="payment-form">
+                                <input type="text" placeholder="UPI ID" required>
+                                <p style="font-size: 12px; margin-top: 5px;">e.g. name@ybl, name@ibl, etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-method" data-method="cod">
+                        <div class="payment-method-header">
+                            <div>
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash on Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkout-nav">
+                    <button class="btn btn-secondary" id="backToDetails">Back</button>
+                    <button class="btn" id="completeOrder">Complete Order</button>
+                </div>
+            </div>
+            
+            <div class="checkout-section" data-section="4">
+                <div class="order-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Order Placed Successfully!</h2>
+                    <p>Thank you for your order. Your fresh Yadav dairy products will be delivered soon.</p>
+                    <p>Order ID: <strong id="orderId">YDF-12345</strong></p>
+                    <button class="btn" id="closeCheckoutSuccess">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample product data
+        const products = [
+    {
+        id: 1,
+        name: "Fresh Cow Milk",
+        description: "100% pure, unadulterated cow milk. Packed with nutrients.",
+        price: 70,
+        image:"https://thumbs.dreamstime.com/b/fresh-dairy-products-cow-background-milk-glass-butter-wooden-tab-ai-generated-fresh-dairy-products-cow-383777400.jpg?w=992"
+    },
+    {
+        id: 2,
+        name: "Fresh Buffalo Milk",
+        description: "100% pure, unadulterated Buffalo milk. Packed with nutrients.",
+        price: 80,
+        image:"https://thumbs.dreamstime.com/b/pouring-milk-glass-background-nature-30352089.jpg?w=768"
+    },
+    {
+        id: 5,
+        name: "Paneer",
+        description: "Fresh homemade paneer made from pure cow milk.",
+        price: 300,
+        image: "https://thumbs.dreamstime.com/b/fresh-paneer-cheese-cubes-basil-leaves-transparent-background-close-up-isolated-ideal-food-cooking-projects-384442391.jpg?w=992"
+    },
+    {
+        id: 4,
+        name: " Cow Ghee",
+        description: " 100% Pure and fresh desi Cow ghee made using traditional methods.",
+        price: 1500,
+        image: "https://thumbs.dreamstime.com/b/ghee-jar-white-background-ai-generated-ghee-jar-white-background-342157013.jpg?w=992"
+    },
+    {
+        id: 3,
+        name: " Buffalo Ghee",
+        description: " 100% Pure and fresh desi Buffalo ghee made using traditional methods.",
+        price: 1800,
+        image: "https://thumbs.dreamstime.com/b/fresh-lemon-curd-glass-jars-covered-burlap-fresh-lemon-curd-glass-jars-covered-rustic-burlap-fabric-twine-set-350545769.jpg?w=992"
+    },
+    {
+        id: 6,
+        name: "Curd",
+        description: "Fresh and creamy curd made from pure milk.",
+        price: 100,
+        image: "https://thumbs.dreamstime.com/b/two-beautifully-crafted-bowls-filled-creamy-curd-garnished-spice-resting-rustic-wooden-surface-391625269.jpg?w=992"
+    },
+    {
+        id: 7,
+        name: "Butter",
+        description: "Fresh homemade butter from cow milk.",
+        price: 150,
+        image: "https://thumbs.dreamstime.com/b/block-fresh-butter-wooden-cutting-board-sliced-against-blue-background-119564035.jpg?w=768"
+    },
+    {
+        id: 8,
+        name: "Lassi",
+        description: "Refreshing sweet lassi made from fresh curd.",
+        price: 50,
+        image: "https://thumbs.dreamstime.com/b/lassi-garnished-pistachios-top-created-generative-ai-307270041.jpg?w=768"
+    },
+    {
+        id: 9,
+        name: "Milk Sweets",
+        description: "Traditional milk sweets fresh milk, and colorful laddu sweets made with pure ingredients.",
+        price: 300,
+        image: "https://thumbs.dreamstime.com/b/brass-plate-features-steamed-white-rice-fresh-milk-colorful-laddu-sweets-creating-vibrant-culinary-contrast-397329932.jpg?w=992"
+    }
+];
+
+        // DOM Elements
+        const productGrid = document.querySelector('.product-grid');
+        const cartItems = document.querySelector('.cart-items');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.getElementById('cartCount');
+        const cartModal = document.getElementById('cartModal');
+        const checkoutModal = document.getElementById('checkoutModal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const closeCheckout = document.getElementById('closeCheckout');
+        const closeCheckoutSuccess = document.getElementById('closeCheckoutSuccess');
+        const toDetailsBtn = document.getElementById('toDetails');
+        const backToCartBtn = document.getElementById('backToCart');
+        const toPaymentBtn = document.getElementById('toPayment');
+        const backToDetailsBtn = document.getElementById('backToDetails');
+        const completeOrderBtn = document.getElementById('completeOrder');
+        const checkoutItems = document.getElementById('checkoutItems');
+        const checkoutTotal = document.getElementById('checkoutTotal');
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        // Cart state
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Initialize the page
+        function init() {
+            renderProducts();
+            updateCart();
+            setupEventListeners();
+        }
+        
+        // Render products
+        function renderProducts() {
+            productGrid.innerHTML = '';
+            products.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.className = 'product-item';
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p class="product-price">₹${product.price}</p>
+                        <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    </div>
+                `;
+                productGrid.appendChild(productElement);
+            });
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty</p>';
+            } else {
+                cart.forEach(item => {
+                    const product = products.find(p => p.id === item.id);
+                    if (product) {
+                        const itemTotal = product.price * item.quantity;
+                        total += itemTotal;
+                        count += item.quantity;
+                        
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="cart-item-info">
+                                <h4>${product.name}</h4>
+                                <p>₹${product.price} x ${item.quantity}</p>
+                            </div>
+                            <div class="cart-item-actions">
+                                <button class="quantity-btn minus" data-id="${product.id}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn plus" data-id="${product.id}">+</button>
+                                <button class="remove-btn" data-id="${product.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    }
+                });
+            }
+            
+            cartTotal.textContent = `₹${total}`;
+            cartCount.textContent = count;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Add to cart buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    addToCart(productId);
+                }
+                
+                if (e.target.classList.contains('quantity-btn')) {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    if (e.target.classList.contains('plus')) {
+                        updateQuantity(productId, 1);
+                    } else if (e.target.classList.contains('minus')) {
+                        updateQuantity(productId, -1);
+                    }
+                }
+                
+                if (e.target.classList.contains('remove-btn') || e.target.closest('.remove-btn')) {
+                    const btn = e.target.classList.contains('remove-btn') ? e.target : e.target.closest('.remove-btn');
+                    const productId = parseInt(btn.getAttribute('data-id'));
+                    removeFromCart(productId);
+                }
+            });
+            
+            // FAQ toggle
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+            
+            // Checkout process
+            checkoutBtn.addEventListener('click', function() {
+                cartModal.style.display = 'none';
+                showCheckoutSection(1);
+                updateCheckoutSummary();
+                checkoutModal.style.display = 'block';
+            });
+            
+            closeCheckout.addEventListener('click', function() {
+                checkoutModal.style.display = 'none';
+                cartModal.style.display = 'block';
+            });
+            
+            closeCheckoutSuccess.addEventListener('click', function() {
+                checkoutModal.style.display = 'none';
+                cart = [];
+                updateCart();
+            });
+            
+            toDetailsBtn.addEventListener('click', function() {
+                showCheckoutSection(2);
+            });
+            
+            backToCartBtn.addEventListener('click', function() {
+                showCheckoutSection(1);
+            });
+            
+            toPaymentBtn.addEventListener('click', function() {
+                if (document.getElementById('deliveryForm').checkValidity()) {
+                    showCheckoutSection(3);
+                } else {
+                    alert('Please fill all required delivery information');
+                }
+            });
+            
+            backToDetailsBtn.addEventListener('click', function() {
+                showCheckoutSection(2);
+            });
+            
+            completeOrderBtn.addEventListener('click', function() {
+                const selectedMethod = document.querySelector('.payment-method.selected');
+                if (!selectedMethod) {
+                    alert('Please select a payment method');
+                    return;
+                }
+                
+                // Process payment based on method
+                const method = selectedMethod.getAttribute('data-method');
+                if (method === 'card') {
+                    const cardForm = document.getElementById('cardForm');
+                    if (cardForm.checkValidity()) {
+                        processPayment();
+                    } else {
+                        alert('Please fill all card details');
+                    }
+                } else if (method === 'upi') {
+                    const upiId = document.querySelector('input[placeholder="UPI ID"]');
+                    if (upiId.value) {
+                        processPayment();
+                    } else {
+                        alert('Please enter your UPI ID');
+                    }
+                } else {
+                    processPayment();
+                }
+            });
+            
+            // Payment method selection
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    paymentMethods.forEach(m => m.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Modal close buttons
+            document.querySelectorAll('.modal .close').forEach(closeBtn => {
+                closeBtn.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Cart button
+            document.getElementById('cartBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                cartModal.style.display = 'block';
+            });
+            
+            // Login/Register toggle
+            document.getElementById('showRegister').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('authForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            });
+            
+            document.getElementById('showLogin').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('registerForm').style.display = 'none';
+                document.getElementById('authForm').style.display = 'block';
+            });
+            
+            // Login button
+            document.getElementById('loginBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('loginModal').style.display = 'flex';
+            });
+        }
+        
+        // Add to cart
+        function addToCart(productId) {
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id: productId, quantity: 1 });
+            }
+            updateCart();
+            
+            // Show notification
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                showNotification(`${product.name} added to cart!`);
+            }
+        }
+        
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = 'var(--primary)';
+            notification.style.color = 'white';
+            notification.style.padding = '12px 20px';
+            notification.style.borderRadius = 'var(--radius)';
+            notification.style.boxShadow = 'var(--shadow)';
+            notification.style.zIndex = '1000';
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            notification.style.transition = 'var(--transition)';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Update quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+        
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+        
+        // Show checkout section
+        function showCheckoutSection(sectionNumber) {
+            document.querySelectorAll('.checkout-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.checkout-step').forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            
+            document.querySelector(`.checkout-section[data-section="${sectionNumber}"]`).classList.add('active');
+            
+            for (let i = 1; i <= sectionNumber; i++) {
+                const step = document.querySelector(`.checkout-step[data-step="${i}"]`);
+                if (i === sectionNumber) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.add('completed');
+                }
+            }
+        }
+        
+        // Update checkout summary
+        function updateCheckoutSummary() {
+            checkoutItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const product = products.find(p => p.id === item.id);
+                if (product) {
+                    const itemTotal = product.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const summaryItem = document.createElement('div');
+                    summaryItem.className = 'summary-item';
+                    summaryItem.innerHTML = `
+                        <span>${product.name} x ${item.quantity}</span>
+                        <span>₹${itemTotal}</span>
+                    `;
+                    checkoutItems.appendChild(summaryItem);
+                }
+            });
+            
+            checkoutTotal.textContent = `₹${total}`;
+        }
+        
+        // Process payment
+        function processPayment() {
+            // Simulate payment processing
+            setTimeout(() => {
+                // Generate random order ID
+                const orderId = 'YDF-' + Math.floor(10000 + Math.random() * 90000);
+                document.getElementById('orderId').textContent = orderId;
+                
+                showCheckoutSection(4);
+            }, 1500);
+        }
+        
+        // Initialize the app
+        init();
+    </script>
+</body>
+</html>
